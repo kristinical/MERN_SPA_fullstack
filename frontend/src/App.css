@@ -1,0 +1,170 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+@import '../node_modules/modern-normalize/modern-normalize.css';
+/* npm install modern-normalize 
+  Resets elements for browser consistancy.  
+  http://nicolasgallagher.com/about-normalize-css/ 
+*/
+
+/*   ----- Variables  -----  */
+:root {
+  --darkgreen: rgb(54, 174, 124);
+  --lightgreen: rgba(54, 174, 124, .15);
+  --red: rgb(220, 53, 53);
+  --blue: rgb(0, 56, 101);
+  --offwhite: rgb(238, 242, 230);
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {      
+  color: var(--blue);
+  background-color: var(--offwhite);
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  background-color: var(--red);
+  font-size: 1.4em;
+  font-weight: bolder;
+  line-height: 1.15;
+  padding: .25em;
+  vertical-align: middle;
+}
+
+nav a {
+  color: var(--offwhite);
+  background-color: var(--blue);
+  border: 2px solid var(--offwhite);
+  border-radius: 0 .75em;
+  margin: .75em;
+  padding: .75em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+}
+
+nav a:hover {
+  color: var(--blue);
+  background-color: var(--offwhite);
+  border: 2px solid var(--blue);
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  background-color: var(--darkgreen);
+  color: var(--offwhite);
+  border-bottom: 2px solid var(--offwhite);
+  font-size: 1.75em;
+  font-weight: lighter;
+  margin: 0;
+  padding: .2em;
+}
+
+main {
+  color: var(--blue);
+  background-color: var(--offwhite);
+  border: none;
+  padding: 1% 2%;
+}
+
+article {
+  margin: 1em auto;
+  font-size: 1.2em;
+}
+
+footer {
+  background-color: var(--red);
+  color: var(--offwhite);
+  border: none;
+  font-size: .9em;
+  font-weight: lighter;
+  margin-top: 1em;
+  padding: .1em;
+}
+
+/*  -----  Typography  ----- */
+p {
+  line-height: 1.5em;
+}
+
+h1, h2 {
+  margin-bottom: -10px;
+}
+
+/*  ----- Table ----- */
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+tr {
+  border-top: 1px solid var(--darkgreen);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--lightgreen); 
+}
+
+th {
+  color: var(--offwhite);
+  background-color: var(--darkgreen);
+  padding: .3em;
+  font-size: large;
+}
+
+td {
+  padding: .3em;
+  font-size: .9em;
+}
+
+/*  ----- Form ----- */
+form {
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+button {
+  padding: .4em 1.2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+  font-size: large;
+}
+
+input, select {
+  text-align: center;
+  margin: .5em;
+  padding: .4em;
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+  display: block;
+  font-size: large;
+}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {
+  article {
+    width: 75%;
+  }
+  nav a {
+    display: inline;
+  }
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {
+  article {
+    width: 50%;
+  }
+}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
